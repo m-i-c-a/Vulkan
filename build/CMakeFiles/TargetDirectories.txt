@@ -1,0 +1,3 @@
+/home/mica/Desktop/Examples/C++/Vulkan/VK_KHR_Display/build/CMakeFiles/rebuild_cache.dir
+/home/mica/Desktop/Examples/C++/Vulkan/VK_KHR_Display/build/CMakeFiles/edit_cache.dir
+/home/mica/Desktop/Examples/C++/Vulkan/VK_KHR_Display/build/CMakeFiles/app.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/app.cpp.o  -o app  -lvulkan /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 

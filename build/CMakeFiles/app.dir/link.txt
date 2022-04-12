@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/app.cpp.o  -o app  -lvulkan /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/app.cpp.o  -o app  -Wl,-rpath,/home/mica/Downloads/1.3.204.1/x86_64/lib /home/mica/Downloads/1.3.204.1/x86_64/lib/libvulkan.so /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 

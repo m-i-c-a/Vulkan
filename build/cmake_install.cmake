@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Examples/C++/Vulkan/VK_KHR_Display
+# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mica/Desktop/Examples/C++/Vulkan/VK_KHR_Display/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mica/Desktop/Vulkan/Vulkan/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

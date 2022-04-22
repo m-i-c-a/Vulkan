@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Downloads/1.3.204.1/x86_64/include 
+CXX_INCLUDES = -I/home/mica/Downloads/1.3.204.1/x86_64/include -I/home/mica/Desktop/Vulkan/Vulkan/extern 
 

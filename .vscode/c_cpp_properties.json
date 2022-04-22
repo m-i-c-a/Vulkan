@@ -4,6 +4,7 @@
             "name" : "Linux",
             "includePath": [
                 "${VULKAN_SDK}/include",
+                "${workspaceFolder}/extern",
                 "${default}"
             ],
             "cppStandard": "${default}",

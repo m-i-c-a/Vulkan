@@ -123,6 +123,19 @@ app/fast:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+#=============================================================================
+# Target rules for targets named loader_example
+
+# Build rule for target.
+loader_example: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 loader_example
+.PHONY : loader_example
+
+# fast build rule for target.
+loader_example/fast:
+	$(MAKE) -f extern/tinygltf/CMakeFiles/loader_example.dir/build.make extern/tinygltf/CMakeFiles/loader_example.dir/build
+.PHONY : loader_example/fast
+
 app.o: app.cpp.o
 
 .PHONY : app.o
@@ -159,6 +172,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... app"
+	@echo "... loader_example"
 	@echo "... app.o"
 	@echo "... app.i"
 	@echo "... app.s"

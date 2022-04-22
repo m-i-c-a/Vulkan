@@ -1,3 +1,6 @@
 /home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles/rebuild_cache.dir
 /home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles/edit_cache.dir
 /home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles/app.dir
+/home/mica/Desktop/Vulkan/Vulkan/build/extern/tinygltf/CMakeFiles/rebuild_cache.dir
+/home/mica/Desktop/Vulkan/Vulkan/build/extern/tinygltf/CMakeFiles/edit_cache.dir
+/home/mica/Desktop/Vulkan/Vulkan/build/extern/tinygltf/CMakeFiles/loader_example.dir

@@ -54,18 +54,38 @@ CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan/build
 
 # The main recursive "all" target.
 all: CMakeFiles/app.dir/all
+all: extern/tinygltf/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: extern/tinygltf/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/app.dir/clean
+clean: extern/tinygltf/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory extern/tinygltf
+
+# Recursive "all" directory target.
+extern/tinygltf/all: extern/tinygltf/CMakeFiles/loader_example.dir/all
+
+.PHONY : extern/tinygltf/all
+
+# Recursive "preinstall" directory target.
+extern/tinygltf/preinstall:
+
+.PHONY : extern/tinygltf/preinstall
+
+# Recursive "clean" directory target.
+extern/tinygltf/clean: extern/tinygltf/CMakeFiles/loader_example.dir/clean
+
+.PHONY : extern/tinygltf/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/app.dir
@@ -93,6 +113,33 @@ app: CMakeFiles/app.dir/rule
 CMakeFiles/app.dir/clean:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/clean
 .PHONY : CMakeFiles/app.dir/clean
+
+#=============================================================================
+# Target rules for target extern/tinygltf/CMakeFiles/loader_example.dir
+
+# All Build rule for target.
+extern/tinygltf/CMakeFiles/loader_example.dir/all:
+	$(MAKE) -f extern/tinygltf/CMakeFiles/loader_example.dir/build.make extern/tinygltf/CMakeFiles/loader_example.dir/depend
+	$(MAKE) -f extern/tinygltf/CMakeFiles/loader_example.dir/build.make extern/tinygltf/CMakeFiles/loader_example.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=3,4 "Built target loader_example"
+.PHONY : extern/tinygltf/CMakeFiles/loader_example.dir/all
+
+# Build rule for subdir invocation for target.
+extern/tinygltf/CMakeFiles/loader_example.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 extern/tinygltf/CMakeFiles/loader_example.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles 0
+.PHONY : extern/tinygltf/CMakeFiles/loader_example.dir/rule
+
+# Convenience name for target.
+loader_example: extern/tinygltf/CMakeFiles/loader_example.dir/rule
+
+.PHONY : loader_example
+
+# clean rule for target.
+extern/tinygltf/CMakeFiles/loader_example.dir/clean:
+	$(MAKE) -f extern/tinygltf/CMakeFiles/loader_example.dir/build.make extern/tinygltf/CMakeFiles/loader_example.dir/clean
+.PHONY : extern/tinygltf/CMakeFiles/loader_example.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

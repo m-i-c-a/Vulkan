@@ -1,0 +1,11 @@
+Culling the Battlefield: Data Oriented Design in Practice
+
+> Old culling system had two cull trees. One for static objects (pre-computed) and one 
+  for dynamic objects.
+> New culling system is brute-force on linear arrays. Saw a 3x speed improvement over
+  the old culling system.
+
+> Use AoS when culling. See "rearrange the frustum planes slide"
+
+> Enables occlusion culling via a prepass where occulders are rendered into a low-res
+  zbuffer and objects rendered after are tested against zbuffer (early z test)

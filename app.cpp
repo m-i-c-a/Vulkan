@@ -8,6 +8,8 @@
 #include <GLFW/glfw3.h>
 
 #include "Loader.hpp"
+#include "Buffer.hpp"
+#include "Model.hpp"
 
 #define VK_CHECK(result)              \
     do                                \
@@ -24,7 +26,7 @@ VkInstance createInstance(const std::vector<const char *> &extensions, const std
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
     appInfo.pEngineName = nullptr;
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
-    appInfo.apiVersion = VK_API_VERSION_1_3;
+    appInfo.apiVersion = VK_API_VERSION_1_2;
 
     VkInstanceCreateInfo instanceCreateInfo{};
     instanceCreateInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
@@ -397,6 +399,7 @@ VkSemaphore createSemaphore(VkDevice device)
 
 
 
+std::vector<Model> g_models;
 
 
 
@@ -464,7 +467,11 @@ struct VkResources
 
     std::array<VkFrame, 2> m_Frames;
     uint32_t m_uFrameIdx;
+
+    VkPhysicalDeviceMemoryProperties m_VkPhysicalDeviceMemProps;
 } gVkResources;
+
+Model* testModel = nullptr;
 
 VkFrame::VkFrame()
 {
@@ -515,43 +522,47 @@ VkCommandBuffer VkFrame::render()
 
     transitionAttachmentsStartOfFrame();
 
-    static VkClearValue clearColor {
-        .color = { 0.14f, 0.68f, 0.23f, 1.0f }
-    };
+    // static VkClearValue clearColor {
+    //     .color = { 0.14f, 0.68f, 0.23f, 1.0f }
+    // };
 
-    const VkRenderingAttachmentInfo colorAttachmentInfo{
-        .sType = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO,
-        .pNext = nullptr,
-        .imageView = gVkResources.m_VkSwapchainImageViews[gVkResources.m_uSwapchainImageIdx],
-        .imageLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        .resolveMode = VK_RESOLVE_MODE_NONE,
-        .resolveImageView = VK_NULL_HANDLE,
-        .resolveImageLayout = VK_IMAGE_LAYOUT_UNDEFINED,
-        .loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR,
-        .storeOp = VK_ATTACHMENT_STORE_OP_STORE,
-        .clearValue = clearColor
-    };
+    // const VkRenderingAttachmentInfo colorAttachmentInfo{
+    //     .sType = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO,
+    //     .pNext = nullptr,
+    //     .imageView = gVkResources.m_VkSwapchainImageViews[gVkResources.m_uSwapchainImageIdx],
+    //     .imageLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+    //     .resolveMode = VK_RESOLVE_MODE_NONE,
+    //     .resolveImageView = VK_NULL_HANDLE,
+    //     .resolveImageLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+    //     .loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR,
+    //     .storeOp = VK_ATTACHMENT_STORE_OP_STORE,
+    //     .clearValue = clearColor
+    // };
 
-    const VkRect2D renderArea{
-        .offset = {0u, 0u},
-        .extent = gVkResources.m_VkSwapchainExtent};
+    // const VkRect2D renderArea{
+    //     .offset = {0u, 0u},
+    //     .extent = gVkResources.m_VkSwapchainExtent};
 
-    const VkRenderingInfo renderingInfo{
-        .sType = VK_STRUCTURE_TYPE_RENDERING_INFO,
-        .pNext = nullptr,
-        .flags = 0x0,
-        .renderArea = renderArea,
-        .layerCount = 1u,
-        .viewMask = 0,
-        .colorAttachmentCount = 1u,
-        .pColorAttachments = &colorAttachmentInfo,
-        .pDepthAttachment = nullptr,
-        .pStencilAttachment = nullptr,
-    };
+    // const VkRenderingInfo renderingInfo{
+    //     .sType = VK_STRUCTURE_TYPE_RENDERING_INFO,
+    //     .pNext = nullptr,
+    //     .flags = 0x0,
+    //     .renderArea = renderArea,
+    //     .layerCount = 1u,
+    //     .viewMask = 0,
+    //     .colorAttachmentCount = 1u,
+    //     .pColorAttachments = &colorAttachmentInfo,
+    //     .pDepthAttachment = nullptr,
+    //     .pStencilAttachment = nullptr,
+    // };
 
-    vkCmdBeginRendering(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], &renderingInfo);
+    // vkCmdBeginRendering(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], &renderingInfo);
 
-    vkCmdEndRendering(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER]);
+    // VkDeviceSize pOffsets = 0;
+    // vkCmdBindVertexBuffers(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], 0u, 1u, g_models[0].m_pPrototype->m_VertexBuffer.getBufferPointer(), &pOffsets);
+    // vkCmdBindIndexBuffer(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], g_models[0].m_pPrototype->m_IndexBuffer.getBuffer(), 0u, VK_INDEX_TYPE_UINT32);
+
+    // vkCmdEndRendering(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER]);
 
     transitionAttachmentsEndOfFrame();
 
@@ -868,28 +879,61 @@ struct InitParams
     VkPresentModeKHR m_VkPresentMode;
 };
 
-struct CullEntity {
-    uint16_t m_uHandle;
-    float m_vPos[3];
-};
+// struct CullEntity {
+//     uint16_t m_uHandle;
+//     float m_vPos[3];
+// };
 
-std::vector<CullEntity> gCullList;
+// std::vector<CullEntity> gCullList;
 
-struct ModelPrototype {
-    VkBuffer m_VkVertexBuffer;    
-    VkDeviceMemory m_VkBufferDeviceMemory;
+// #include "Buffer.hpp"
 
-    std::vector<VkImage> m_VkImages;
-    std::vector<VkImageView> m_VkImageViews;
-    std::vector<VkDeviceMemory> m_VkImageDeviceMemory;
-};
+// struct Renderable {
+//     StaticBuffer& vertexBuffer;
+//     StaticBuffer& indexBuffer; // also stores index count
 
-std::unordered_map<std::string, ModelPrototype> gNameToPrototypeMap;
+//     VkDescriptorSet descriptorSet; // per draw data
 
-struct Model {
-    uint16_t handle;
-    ModelPrototype& prototype;
-};
+//     // uint32_t indexCount; ???
+//     uint32_t instanceCount;
+//     uint32_t firstIndex;
+//     int32_t vertexOffset;
+//     uint32_t firstInstance;
+// };
+
+// struct Model {
+//     uint16_t handle;
+
+//     // doesn't have to be the pipeline handle itself, just needs ot be someting that can identify 
+//     // which pipline we belong to
+//     VkPipeline pipeline;
+//     PerObjData perObjData;
+
+//     VkDescriptorSet objectSet;
+
+//     ModelPrototype& prototype;
+//     MaterialInstance& materialInstance; // materials are currently non modifialble with thise setup
+// };
+
+// struct ModelPrototype {
+//     StaticBuffer m_VkVertexBuffer;    
+//     StaticBuffer m_VkIndexBuffer;
+
+//     std::vector<VkImage> m_VkImages;
+//     std::vector<VkImageView> m_VkImageViews;
+//     std::vector<VkDeviceMemory> m_VkImageDeviceMemory;
+
+//     std::vector<uint32_t> m_vMaterialIds;
+//     std::vector<Renderable> m_Renderables;
+// };
+
+// std::unordered_map<std::string, ModelPrototype> gNameToPrototypeMap;
+
+// struct Model {
+//     uint16_t handle;
+//     ModelPrototype& prototype;
+//     // Transform
+// };
 
 void sceneInit()
 {
@@ -897,7 +941,9 @@ void sceneInit()
     gVkResources.m_VkPipeline = createGraphicsPipeline(gVkResources.m_VkDevice, gVkResources.m_VkSwapchainExtent, gVkResources.m_VkPipelineLayout);
 
     // setup buffers and objects
-    // loadModel("../models/cube.gltf");
+    std::vector<Model> models = processGLTF("../models/SimplePlane.gltf");
+    for (const Model m : models)
+        g_models.push_back(m);
 }
 
 InitParams appInit()
@@ -948,6 +994,12 @@ void vkInit(const InitParams &initParams)
 
     for (VkFrame &frame : gVkResources.m_Frames)
         frame.init();
+
+
+    vkGetPhysicalDeviceMemoryProperties(gVkResources.m_VkPhysicalDevice, &gVkResources.m_VkPhysicalDeviceMemProps);
+
+    StaticBuffer::init(&gVkResources.m_VkDevice, &gVkResources.m_VkPhysicalDeviceMemProps);
+    StagingBuffer::init(&gVkResources.m_VkDevice, gVkResources.m_VkGraphicsQueue, gVkResources.m_uGraphicsQueueFamilyIndex);
 }
 
 void run()
@@ -1014,6 +1066,8 @@ void run()
 
 void cleanup()
 {
+    StagingBuffer::destroy();
+
     vkDestroyPipelineLayout(gVkResources.m_VkDevice, gVkResources.m_VkPipelineLayout, nullptr);
     vkDestroyPipeline(gVkResources.m_VkDevice, gVkResources.m_VkPipeline, nullptr);
 

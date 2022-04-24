@@ -136,6 +136,60 @@ loader_example/fast:
 	$(MAKE) -f extern/tinygltf/CMakeFiles/loader_example.dir/build.make extern/tinygltf/CMakeFiles/loader_example.dir/build
 .PHONY : loader_example/fast
 
+Buffer.o: Buffer.cpp.o
+
+.PHONY : Buffer.o
+
+# target to build an object file
+Buffer.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Buffer.cpp.o
+.PHONY : Buffer.cpp.o
+
+Buffer.i: Buffer.cpp.i
+
+.PHONY : Buffer.i
+
+# target to preprocess a source file
+Buffer.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Buffer.cpp.i
+.PHONY : Buffer.cpp.i
+
+Buffer.s: Buffer.cpp.s
+
+.PHONY : Buffer.s
+
+# target to generate assembly for a file
+Buffer.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Buffer.cpp.s
+.PHONY : Buffer.cpp.s
+
+Loader.o: Loader.cpp.o
+
+.PHONY : Loader.o
+
+# target to build an object file
+Loader.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Loader.cpp.o
+.PHONY : Loader.cpp.o
+
+Loader.i: Loader.cpp.i
+
+.PHONY : Loader.i
+
+# target to preprocess a source file
+Loader.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Loader.cpp.i
+.PHONY : Loader.cpp.i
+
+Loader.s: Loader.cpp.s
+
+.PHONY : Loader.s
+
+# target to generate assembly for a file
+Loader.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Loader.cpp.s
+.PHONY : Loader.cpp.s
+
 app.o: app.cpp.o
 
 .PHONY : app.o
@@ -173,6 +227,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... app"
 	@echo "... loader_example"
+	@echo "... Buffer.o"
+	@echo "... Buffer.i"
+	@echo "... Buffer.s"
+	@echo "... Loader.o"
+	@echo "... Loader.i"
+	@echo "... Loader.s"
 	@echo "... app.o"
 	@echo "... app.i"
 	@echo "... app.s"

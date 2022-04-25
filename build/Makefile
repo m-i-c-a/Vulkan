@@ -136,6 +136,33 @@ loader_example/fast:
 	$(MAKE) -f extern/tinygltf/CMakeFiles/loader_example.dir/build.make extern/tinygltf/CMakeFiles/loader_example.dir/build
 .PHONY : loader_example/fast
 
+App.o: App.cpp.o
+
+.PHONY : App.o
+
+# target to build an object file
+App.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/App.cpp.o
+.PHONY : App.cpp.o
+
+App.i: App.cpp.i
+
+.PHONY : App.i
+
+# target to preprocess a source file
+App.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/App.cpp.i
+.PHONY : App.cpp.i
+
+App.s: App.cpp.s
+
+.PHONY : App.s
+
+# target to generate assembly for a file
+App.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/App.cpp.s
+.PHONY : App.cpp.s
+
 Buffer.o: Buffer.cpp.o
 
 .PHONY : Buffer.o
@@ -190,32 +217,113 @@ Loader.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Loader.cpp.s
 .PHONY : Loader.cpp.s
 
-app.o: app.cpp.o
+VkFrame.o: VkFrame.cpp.o
 
-.PHONY : app.o
+.PHONY : VkFrame.o
 
 # target to build an object file
-app.cpp.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/app.cpp.o
-.PHONY : app.cpp.o
+VkFrame.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkFrame.cpp.o
+.PHONY : VkFrame.cpp.o
 
-app.i: app.cpp.i
+VkFrame.i: VkFrame.cpp.i
 
-.PHONY : app.i
+.PHONY : VkFrame.i
 
 # target to preprocess a source file
-app.cpp.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/app.cpp.i
-.PHONY : app.cpp.i
+VkFrame.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkFrame.cpp.i
+.PHONY : VkFrame.cpp.i
 
-app.s: app.cpp.s
+VkFrame.s: VkFrame.cpp.s
 
-.PHONY : app.s
+.PHONY : VkFrame.s
 
 # target to generate assembly for a file
-app.cpp.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/app.cpp.s
-.PHONY : app.cpp.s
+VkFrame.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkFrame.cpp.s
+.PHONY : VkFrame.cpp.s
+
+VkRuntime.o: VkRuntime.cpp.o
+
+.PHONY : VkRuntime.o
+
+# target to build an object file
+VkRuntime.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkRuntime.cpp.o
+.PHONY : VkRuntime.cpp.o
+
+VkRuntime.i: VkRuntime.cpp.i
+
+.PHONY : VkRuntime.i
+
+# target to preprocess a source file
+VkRuntime.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkRuntime.cpp.i
+.PHONY : VkRuntime.cpp.i
+
+VkRuntime.s: VkRuntime.cpp.s
+
+.PHONY : VkRuntime.s
+
+# target to generate assembly for a file
+VkRuntime.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkRuntime.cpp.s
+.PHONY : VkRuntime.cpp.s
+
+VkStartup.o: VkStartup.cpp.o
+
+.PHONY : VkStartup.o
+
+# target to build an object file
+VkStartup.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkStartup.cpp.o
+.PHONY : VkStartup.cpp.o
+
+VkStartup.i: VkStartup.cpp.i
+
+.PHONY : VkStartup.i
+
+# target to preprocess a source file
+VkStartup.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkStartup.cpp.i
+.PHONY : VkStartup.cpp.i
+
+VkStartup.s: VkStartup.cpp.s
+
+.PHONY : VkStartup.s
+
+# target to generate assembly for a file
+VkStartup.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/VkStartup.cpp.s
+.PHONY : VkStartup.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -227,15 +335,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... app"
 	@echo "... loader_example"
+	@echo "... App.o"
+	@echo "... App.i"
+	@echo "... App.s"
 	@echo "... Buffer.o"
 	@echo "... Buffer.i"
 	@echo "... Buffer.s"
 	@echo "... Loader.o"
 	@echo "... Loader.i"
 	@echo "... Loader.s"
-	@echo "... app.o"
-	@echo "... app.i"
-	@echo "... app.s"
+	@echo "... VkFrame.o"
+	@echo "... VkFrame.i"
+	@echo "... VkFrame.s"
+	@echo "... VkRuntime.o"
+	@echo "... VkRuntime.i"
+	@echo "... VkRuntime.s"
+	@echo "... VkStartup.o"
+	@echo "... VkStartup.i"
+	@echo "... VkStartup.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

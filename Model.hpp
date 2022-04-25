@@ -36,12 +36,31 @@ struct ModelPrototype {
 
 struct Model
 {
-    Model(const std::shared_ptr<ModelPrototype> prototype)
+    Model(std::shared_ptr<ModelPrototype> prototype)
     : m_pPrototype(prototype)
     {}
 
-    uint16_t handle;
-    const std::shared_ptr<ModelPrototype> m_pPrototype;
+    Model(Model&& other)
+    : m_uHandle(std::move(other.m_uHandle))
+    , m_pPrototype(std::move(other.m_pPrototype))
+    {
+        other.m_uHandle = -1;
+        other.m_pPrototype = nullptr;
+    }
+
+    Model& operator=(Model&& rhs)
+    {
+        m_uHandle = rhs.m_uHandle;
+        m_pPrototype = rhs.m_pPrototype;
+
+        rhs.m_uHandle = -1;
+        rhs.m_pPrototype = nullptr;
+
+        return *this;
+    }
+
+    uint16_t m_uHandle;
+    std::shared_ptr<ModelPrototype> m_pPrototype;
 };
 
 #endif // MODEL_HPP

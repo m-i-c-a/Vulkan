@@ -20,6 +20,13 @@ namespace
 {
     constexpr bool LOADER_DEBUG = true;
 
+    struct Vertex
+    {
+        glm::vec3 pos;
+        glm::vec3 normal;
+        glm::vec2 uv;
+    };
+
 #ifdef MATERIAL_LOADING
     static std::unordered_map<std::string, std::unique_ptr<BaseMaterial>> g_MaterialMap;
 
@@ -85,13 +92,6 @@ namespace
         return res;
     }
 
-    struct Vertex
-    {
-        glm::vec3 pos;
-        glm::vec3 normal;
-        glm::vec2 uv;
-    };
-
     std::shared_ptr<ModelPrototype> processGLTFNode(const tinygltf::Model &gltfModel, const tinygltf::Node &gltfNode)
     {
         // Process Mesh (Group of renderables)
@@ -123,13 +123,6 @@ namespace
             const tinygltf::BufferView &gltfPositionBufferView = gltfModel.bufferViews[gltfPositionAccessor.bufferView];
             const float *gltfPositionBuffer = reinterpret_cast<const float *>(&(gltfModel.buffers[gltfPositionBufferView.buffer].data[gltfPositionBufferView.byteOffset]));
             const uint32_t posStride = tinygltf::GetComponentSizeInBytes(gltfPositionAccessor.componentType);
-
-            // iter = gltfPrimitive.attributes.find("NORMAL");
-            // assert(iter != gltfPrimitive.attributes.end());
-            // const tinygltf::Accessor &gltfNormalAccessor = gltfModel.accessors[iter->second];
-            // const tinygltf::BufferView &gltfiNormalBufferView = gltfModel.bufferViews[gltfPositionAccessor.bufferView];
-            // const float *gltfPositionBuffer = reinterpret_cast<const float *>(&(gltfModel.buffers[gltfPositionBufferView.buffer].data[gltfPositionBufferView.byteOffset]));
-            // const uint32_t posStride = tinygltf::GetComponentSizeInBytes(gltfPositionAccessor.componentType);
 
             for (uint32_t vertexIndex = 0; vertexIndex < gltfPositionAccessor.count; ++vertexIndex)
             {
@@ -231,8 +224,7 @@ std::vector<Model> processGLTF(const std::string &filepath)
 
         // Extract translation
 
-        Model model (prototype);
-        models.push_back(model);
+        models.emplace_back(prototype);
     }
 
     return models;

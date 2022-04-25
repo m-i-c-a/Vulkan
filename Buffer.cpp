@@ -13,6 +13,8 @@
         }                              \
     } while (false)
 
+#define VULKAN_1_2
+
 namespace
 {
     uint32_t getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags, VkPhysicalDeviceMemoryProperties memoryProperties)
@@ -111,6 +113,7 @@ void StagingBuffer::upload(VkBuffer srcBuffer, VkDeviceSize srcOffset, VkBuffer 
 
     vkEndCommandBuffer(m_VkCommandBuffer);
 
+#ifdef VULKAN_1_3
     static const VkCommandBufferSubmitInfo commandBufferSubmitInfo{
         .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO,
         .commandBuffer = m_VkCommandBuffer
@@ -123,8 +126,17 @@ void StagingBuffer::upload(VkBuffer srcBuffer, VkDeviceSize srcOffset, VkBuffer 
     };
 
     VK_CHECK(vkQueueSubmit2(m_VkQueue, 1u, &renderSubmitInfo, VK_NULL_HANDLE));
-    vkQueueWaitIdle(m_VkQueue);
+#endif
+#ifdef VULKAN_1_2
+    VkSubmitInfo submitInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+        .commandBufferCount = 1u,
+        .pCommandBuffers = &m_VkCommandBuffer,
+    };
+    VK_CHECK(vkQueueSubmit(m_VkQueue, 1u, &submitInfo, VK_NULL_HANDLE));
+#endif
 
+    vkQueueWaitIdle(m_VkQueue);
     vkResetCommandPool(*m_pVkDevice, m_VkCommandPool, 0x0);
 }
 

@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/Buffer.cpp.o"
   "CMakeFiles/app.dir/Loader.cpp.o"
   "CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o"
-  "CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o"
+  "CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o"
   "CMakeFiles/app.dir/Renderer/Renderable.cpp.o"
   "CMakeFiles/app.dir/Renderer/SortBin.cpp.o"
   "CMakeFiles/app.dir/VkFrame.cpp.o"

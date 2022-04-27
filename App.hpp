@@ -9,6 +9,7 @@
 #include "Model.hpp"
 #include "VkFrame.hpp"
 #include "Renderer/RenderManager.hpp"
+#include "Renderer/PipelineManager.hpp"
 
 class GLFWwindow;
 
@@ -22,11 +23,17 @@ struct SceneResources
 
     VkPipelineLayout m_VkPipelineLayout;
 
+    PipelineManager pipelineManger;
     RenderManager renderer;
 
     std::vector<Model> m_vModels;
     std::array<VkPipelineLayout, PIPELINE_COUNT> m_vVkPipelineLayouts;
     std::array<VkPipeline, PIPELINE_COUNT> m_vVkPipelines;
+
+    SceneResources(VkDevice device, VkExtent2D swapchainExtent, VkFormat swapchainFormat)
+        : pipelineManger { device, swapchainExtent, swapchainFormat }
+    {
+    }
 };
 
 struct AppResources

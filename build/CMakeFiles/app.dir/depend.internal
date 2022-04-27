@@ -8,6 +8,7 @@ CMakeFiles/app.dir/App.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Model.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/RenderManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.hpp
@@ -74,6 +75,7 @@ CMakeFiles/app.dir/Loader.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Loader.cpp
  /home/mica/Desktop/Vulkan/Vulkan/Loader.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Model.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Downloads/1.3.204.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
  /home/mica/Downloads/1.3.204.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
@@ -104,6 +106,7 @@ CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.cpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Types.hpp
  /home/mica/Downloads/1.3.204.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
@@ -130,10 +133,11 @@ CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o
  /home/mica/Downloads/1.3.204.1/x86_64/include/vulkan/vulkan_xcb.h
  /home/mica/Downloads/1.3.204.1/x86_64/include/vulkan/vulkan_xlib.h
  /home/mica/Downloads/1.3.204.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
-CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o
+CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Defines.hpp
- /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp
- /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.cpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/Types.hpp
  /home/mica/Downloads/1.3.204.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
  /home/mica/Downloads/1.3.204.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
  /home/mica/Downloads/1.3.204.1/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
@@ -190,6 +194,7 @@ CMakeFiles/app.dir/Renderer/SortBin.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Buffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.cpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.hpp
@@ -223,6 +228,7 @@ CMakeFiles/app.dir/VkFrame.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Model.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/RenderManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.hpp
@@ -288,6 +294,7 @@ CMakeFiles/app.dir/VkStartup.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Model.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/RenderManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.hpp
@@ -327,6 +334,7 @@ CMakeFiles/app.dir/main.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan/Model.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.hpp
+ /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/RenderManager.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.hpp
  /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.hpp

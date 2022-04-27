@@ -244,32 +244,32 @@ Renderer/PipelineBin.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineBin.cpp.s
 .PHONY : Renderer/PipelineBin.cpp.s
 
-Renderer/PipelineCreator.o: Renderer/PipelineCreator.cpp.o
+Renderer/PipelineManager.o: Renderer/PipelineManager.cpp.o
 
-.PHONY : Renderer/PipelineCreator.o
+.PHONY : Renderer/PipelineManager.o
 
 # target to build an object file
-Renderer/PipelineCreator.cpp.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o
-.PHONY : Renderer/PipelineCreator.cpp.o
+Renderer/PipelineManager.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o
+.PHONY : Renderer/PipelineManager.cpp.o
 
-Renderer/PipelineCreator.i: Renderer/PipelineCreator.cpp.i
+Renderer/PipelineManager.i: Renderer/PipelineManager.cpp.i
 
-.PHONY : Renderer/PipelineCreator.i
+.PHONY : Renderer/PipelineManager.i
 
 # target to preprocess a source file
-Renderer/PipelineCreator.cpp.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i
-.PHONY : Renderer/PipelineCreator.cpp.i
+Renderer/PipelineManager.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineManager.cpp.i
+.PHONY : Renderer/PipelineManager.cpp.i
 
-Renderer/PipelineCreator.s: Renderer/PipelineCreator.cpp.s
+Renderer/PipelineManager.s: Renderer/PipelineManager.cpp.s
 
-.PHONY : Renderer/PipelineCreator.s
+.PHONY : Renderer/PipelineManager.s
 
 # target to generate assembly for a file
-Renderer/PipelineCreator.cpp.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s
-.PHONY : Renderer/PipelineCreator.cpp.s
+Renderer/PipelineManager.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer/PipelineManager.cpp.s
+.PHONY : Renderer/PipelineManager.cpp.s
 
 Renderer/Renderable.o: Renderer/Renderable.cpp.o
 
@@ -455,9 +455,9 @@ help:
 	@echo "... Renderer/PipelineBin.o"
 	@echo "... Renderer/PipelineBin.i"
 	@echo "... Renderer/PipelineBin.s"
-	@echo "... Renderer/PipelineCreator.o"
-	@echo "... Renderer/PipelineCreator.i"
-	@echo "... Renderer/PipelineCreator.s"
+	@echo "... Renderer/PipelineManager.o"
+	@echo "... Renderer/PipelineManager.i"
+	@echo "... Renderer/PipelineManager.s"
 	@echo "... Renderer/Renderable.o"
 	@echo "... Renderer/Renderable.i"
 	@echo "... Renderer/Renderable.s"

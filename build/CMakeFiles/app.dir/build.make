@@ -109,18 +109,18 @@ CMakeFiles/app.dir/Renderer/Renderable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/Renderable.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.cpp -o CMakeFiles/app.dir/Renderer/Renderable.cpp.s
 
-CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o: ../Renderer/PipelineCreator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp
+CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o: ../Renderer/PipelineManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.cpp
 
-CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp > CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i
+CMakeFiles/app.dir/Renderer/PipelineManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/Renderer/PipelineManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.cpp > CMakeFiles/app.dir/Renderer/PipelineManager.cpp.i
 
-CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp -o CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s
+CMakeFiles/app.dir/Renderer/PipelineManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/PipelineManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineManager.cpp -o CMakeFiles/app.dir/Renderer/PipelineManager.cpp.s
 
 CMakeFiles/app.dir/App.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/App.cpp.o: ../App.cpp
@@ -206,7 +206,7 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/Renderer/SortBin.cpp.o" \
 "CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o" \
 "CMakeFiles/app.dir/Renderer/Renderable.cpp.o" \
-"CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o" \
+"CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o" \
 "CMakeFiles/app.dir/App.cpp.o" \
 "CMakeFiles/app.dir/VkStartup.cpp.o" \
 "CMakeFiles/app.dir/VkRuntime.cpp.o" \
@@ -221,7 +221,7 @@ app: CMakeFiles/app.dir/main.cpp.o
 app: CMakeFiles/app.dir/Renderer/SortBin.cpp.o
 app: CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o
 app: CMakeFiles/app.dir/Renderer/Renderable.cpp.o
-app: CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o
+app: CMakeFiles/app.dir/Renderer/PipelineManager.cpp.o
 app: CMakeFiles/app.dir/App.cpp.o
 app: CMakeFiles/app.dir/VkStartup.cpp.o
 app: CMakeFiles/app.dir/VkRuntime.cpp.o

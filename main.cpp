@@ -50,10 +50,15 @@ void appInit(AppResources &appResources, VulkanResources &vulkanResources)
 
 void run(AppResources &appResources, VulkanResources &vulkanResources)
 {
-    PipelineCreator::initiailize(vulkanResources.m_VkDevice, vulkanResources.m_VkSwapchainExtent, vulkanResources.m_VkSwapchainImageFormat);
+    SceneResources sceneResources { vulkanResources.m_VkDevice, vulkanResources.m_VkSwapchainExtent, vulkanResources.m_VkSwapchainImageFormat };
 
-    SceneResources sceneResources;
+    PipelineBin::initialize(&sceneResources.pipelineManger);
+
     sceneResources.renderer.addSortBin(SortBinType::OPAQUE, { PIPELINE_DEFAULT } );
+
+
+
+
 
     std::vector<Model> models = processGLTF("../models/SimplePlane.gltf");
     std::move(models.begin(), models.end(), std::back_inserter(sceneResources.m_vModels));
@@ -137,8 +142,6 @@ void cleanup(AppResources &appResources, VulkanResources &vulkanResources)
 {
     for (VkFrame &frame : appResources.m_Frames)
         frame.cleanup();
-
-    PipelineBin::destroy(vulkanResources.m_VkDevice);
 
     vulkanDestroy(vulkanResources);
 

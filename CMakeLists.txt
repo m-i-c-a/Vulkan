@@ -16,7 +16,7 @@ add_executable( ${PROJECT_NAME} main.cpp
     Renderer/SortBin.cpp         Renderer/SortBin.hpp
     Renderer/PipelineBin.cpp     Renderer/PipelineBin.hpp
     Renderer/Renderable.cpp      Renderer/Renderable.hpp
-    Renderer/PipelineCreator.cpp Renderer/PipelineCreator.hpp
+    Renderer/PipelineManager.cpp Renderer/PipelineManager.hpp
 
     App.cpp App.hpp
     VkStartup.cpp VkStartup.hpp

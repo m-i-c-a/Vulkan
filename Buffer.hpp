@@ -30,6 +30,7 @@ public:
 
     VkBuffer getBuffer() const { return m_vkBuffer; }
     const VkBuffer* getBufferPointer() const { return &m_vkBuffer; }
+    const VkBuffer& getBufferRef() const { return m_vkBuffer; }
 };
 
 class DynamicBuffer

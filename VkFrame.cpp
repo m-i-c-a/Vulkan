@@ -125,7 +125,7 @@ void VkFrame::transitionAttachmentsEndOfFrame()
 
 
 
-VkCommandBuffer VkFrame::render()
+VkCommandBuffer VkFrame::render(const RenderManager& renderer)
 {
     resetCommandPools();
 
@@ -171,13 +171,24 @@ VkCommandBuffer VkFrame::render()
 
     m_pVkResources->vkCmdBeginRenderingKHR(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], &renderingInfo);
 
-    // vkCmdBindPipeline(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], VK_PIPELINE_BIND_POINT_GRAPHICS, m_pVkResources->m_VkPipeline);
+    renderer.render(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER]);
 
-    // VkDeviceSize pOffsets = 0;
-    // vkCmdBindVertexBuffers(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], 0u, 1u, g_models[0].m_pPrototype->m_VertexBuffer.getBufferPointer(), &pOffsets);
-    // vkCmdBindIndexBuffer(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], g_models[0].m_pPrototype->m_IndexBuffer.getBuffer(), 0u, VK_INDEX_TYPE_UINT32);
+    // {
+    //     vkCmdBindPipeline(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline);
 
-    // vkCmdDrawIndexed(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], g_models[0].m_pPrototype->m_Renderables[0].indexCount, 1u, 0u, g_models[0].m_pPrototype->m_Renderables[0].vertexOffset, 0u);
+    //     for (const Model& model : models)
+    //     {
+    //         VkDeviceSize pOffsets = 0;
+    //         vkCmdBindVertexBuffers(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], 0u, 1u, model.m_pPrototype->m_VertexBuffer.getBufferPointer(), &pOffsets);
+    //         vkCmdBindIndexBuffer(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], model.m_pPrototype->m_IndexBuffer.getBuffer(), 0u, VK_INDEX_TYPE_UINT32);
+
+    //         for (const Renderable& renderable : model.m_pPrototype->m_Renderables)
+    //         {
+    //             vkCmdDrawIndexed(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER], renderable.indexCount, 1u, 0u, renderable.vertexOffset, 0u);
+    //         }
+    //     }
+    // }
+
 
     m_pVkResources->vkCmdEndRenderingKHR(m_VkCommandBuffers[COMMMAND_BUFFER_RENDER]);
 

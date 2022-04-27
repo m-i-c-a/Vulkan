@@ -11,10 +11,12 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 #include "Loader.hpp"
 #include "Buffer.hpp"
 #include "Model.hpp"
+#include "Renderer/PipelineCreator.hpp"
 
 namespace
 {
@@ -23,8 +25,8 @@ namespace
     struct Vertex
     {
         glm::vec3 pos;
-        glm::vec3 normal;
-        glm::vec2 uv;
+        // glm::vec3 normal;
+        // glm::vec2 uv;
     };
 
 #ifdef MATERIAL_LOADING
@@ -121,8 +123,8 @@ namespace
             assert(iter != gltfPrimitive.attributes.end());
             const tinygltf::Accessor &gltfPositionAccessor = gltfModel.accessors[iter->second];
             const tinygltf::BufferView &gltfPositionBufferView = gltfModel.bufferViews[gltfPositionAccessor.bufferView];
-            const float *gltfPositionBuffer = reinterpret_cast<const float *>(&(gltfModel.buffers[gltfPositionBufferView.buffer].data[gltfPositionBufferView.byteOffset]));
-            const uint32_t posStride = tinygltf::GetComponentSizeInBytes(gltfPositionAccessor.componentType);
+            const float *gltfPositionBuffer = reinterpret_cast<const float *>(&(gltfModel.buffers[gltfPositionBufferView.buffer].data[gltfPositionAccessor.byteOffset + gltfPositionBufferView.byteOffset]));
+            const int32_t posStride = gltfPositionAccessor.ByteStride(gltfPositionBufferView) / sizeof(float);
 
             for (uint32_t vertexIndex = 0; vertexIndex < gltfPositionAccessor.count; ++vertexIndex)
             {
@@ -166,7 +168,7 @@ namespace
                 exit(EXIT_FAILURE);
             }
 
-            Renderable renderable;
+            Renderable renderable { prototype->m_IndexBuffer, prototype->m_VertexBuffer };
             renderable.vertexOffset = vertexOffset;
             renderable.firstIndex = indexOffset;
             renderable.indexCount = indexCount;
@@ -223,8 +225,28 @@ std::vector<Model> processGLTF(const std::string &filepath)
         std::shared_ptr<ModelPrototype> prototype = processGLTFNode(gltfModel, gltfNode);
 
         // Extract translation
+        glm::mat4 transform { 1.0f };
 
-        models.emplace_back(prototype);
+        if (!gltfNode.translation.empty())
+        {
+            const glm::vec3 translation = glm::make_vec3(gltfNode.translation.data());
+            transform = glm::translate(transform, translation);
+        }
+
+        if (!gltfNode.rotation.empty())
+        {
+            const glm::quat quaternion = glm::make_quat(gltfNode.rotation.data());
+            const glm::mat4 rotationMatrix = glm::toMat4(quaternion);
+            transform = (rotationMatrix * transform);
+        }
+
+        if (!gltfNode.scale.empty())
+        {
+            const glm::vec3 scale = glm::make_vec3(gltfNode.scale.data());
+            transform = glm::scale(transform, scale);
+        }
+
+        models.emplace_back(prototype, transform);
     }
 
     return models;

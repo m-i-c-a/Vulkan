@@ -43,6 +43,30 @@ VkShaderModule createShaderModule(VkDevice device, const char *filename)
 
 VkPipelineLayout createDefaultGraphicsPipelineLayout(VkDevice device)
 {
+    const std::array<VkDescriptorSetLayoutBinding, 1> frameBindings {{
+        {
+            .binding = 0u,
+            .descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
+            .descriptorCount = 1u,
+            .stageFlags = VK_SHADER_STAGE_VERTEX_BIT,
+            .pImmutableSamplers = nullptr
+        }
+    }};
+
+    const VkDescriptorSetLayoutCreateInfo frameSetCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
+        .pNext = nullptr,
+        .flags = 0x0,
+        .bindingCount = static_cast<uint32_t>(frameBindings.size()),
+        .pBindings = frameBindings.data()
+    };
+
+    VkDescriptorSetLayout frameSetLayout = VK_NULL_HANDLE;
+    VK_CHECK(vkCreateDescriptorSetLayout(device, &frameSetCreateInfo, nullptr, &frameSetLayout));
+
+
+
+
     const VkPipelineLayoutCreateInfo pipelineLayoutCreateInfo{
         .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
         .setLayoutCount = 0,

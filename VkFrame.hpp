@@ -5,6 +5,9 @@
 
 #include <vulkan/vulkan.h>
 
+#include "Model.hpp"
+#include "Renderer/RenderManager.hpp"
+
 class VulkanResources;
 
 class VkFrame
@@ -37,7 +40,7 @@ public:
 
     void setColorAttachment(VkImage image);
     void cull();
-    VkCommandBuffer render();
+    VkCommandBuffer render(const RenderManager& renderer);
 
     std::array<VkCommandPool, 1> m_VkCommandPools;
     std::array<VkCommandBuffer, 1> m_VkCommandBuffers;

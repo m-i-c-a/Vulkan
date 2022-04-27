@@ -4,27 +4,15 @@
 #include <vector>
 #include <memory>
 
+#include <glm/mat4x4.hpp>
+
 #include "Buffer.hpp"
+#include "Renderer/Renderable.hpp"
 
-// Corresponds to a gltf mesh primitive
-struct Renderable {
-    // StaticBuffer& vertexBuffer;
-    // StaticBuffer& indexBuffer; // also stores index count
-
-    VkDescriptorSet descriptorSet; // per draw data
-
-    uint32_t indexCount;
-    uint32_t instanceCount;
-    uint32_t firstIndex;
-    int32_t vertexOffset;
-    uint32_t firstInstance;
-};
 
 struct ModelPrototype {
     StaticBuffer m_VertexBuffer;    
     StaticBuffer m_IndexBuffer;
-
-    StaticBuffer m_StaticBuffer;
 
     std::vector<VkImage> m_VkImages;
     std::vector<VkImageView> m_VkImageViews;
@@ -36,8 +24,9 @@ struct ModelPrototype {
 
 struct Model
 {
-    Model(std::shared_ptr<ModelPrototype> prototype)
+    Model(std::shared_ptr<ModelPrototype> prototype, glm::mat4 transform)
     : m_pPrototype(prototype)
+    , m_m4Transform(transform)
     {}
 
     Model(Model&& other)
@@ -61,6 +50,7 @@ struct Model
 
     uint16_t m_uHandle;
     std::shared_ptr<ModelPrototype> m_pPrototype;
+    glm::mat4 m_m4Transform;
 };
 
 #endif // MODEL_HPP

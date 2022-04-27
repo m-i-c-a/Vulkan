@@ -9,13 +9,17 @@
 #include "Loader.hpp"
 #include "Model.hpp"
 
+
+#include "Renderer/RenderManager.hpp"
+#include "Renderer/PipelineCreator.hpp"
+
 void appInit(AppResources &appResources, VulkanResources &vulkanResources)
 {
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-    appResources.m_uWindowWidth = 300u;
-    appResources.m_uWindowHeight = 300u;
+    appResources.m_uWindowWidth = 500u;
+    appResources.m_uWindowHeight = 500u;
     appResources.m_Window = glfwCreateWindow(static_cast<int>(appResources.m_uWindowWidth), static_cast<int>(appResources.m_uWindowHeight), "App", nullptr, nullptr);
     assert(appResources.m_Window != nullptr);
 
@@ -27,8 +31,8 @@ void appInit(AppResources &appResources, VulkanResources &vulkanResources)
 
     VulkanInitParams vulkanInitParams{};
 
-    vulkanInitParams.m_uWindowWidth = 300u;
-    vulkanInitParams.m_uWindowHeight = 300u;
+    vulkanInitParams.m_uWindowWidth = appResources.m_uWindowWidth;
+    vulkanInitParams.m_uWindowHeight = appResources.m_uWindowHeight;
     vulkanInitParams.m_Window = appResources.m_Window;
 
     vulkanInitParams.m_vInstanceExtensions.insert(vulkanInitParams.m_vInstanceExtensions.end(), &instanceExtensions[0], &instanceExtensions[numInstanceExtensions]);
@@ -44,23 +48,18 @@ void appInit(AppResources &appResources, VulkanResources &vulkanResources)
         frame.init();
 }
 
-void sceneInit(VulkanResources& vulkanResources, SceneResources& sceneResources)
-{
-    sceneResources.m_vVkPipelineLayouts[SceneResources::PIPELINE_DEFAULT] = createDefaultGraphicsPipelineLayout(vulkanResources.m_VkDevice);
-    sceneResources.m_vVkPipelines[SceneResources::PIPELINE_DEFAULT] = createDefaultGraphicsPipeline(vulkanResources.m_VkDevice, vulkanResources.m_VkSwapchainExtent, vulkanResources.m_VkSwapchainImageFormat, sceneResources.m_vVkPipelineLayouts[SceneResources::PIPELINE_DEFAULT]);
-
-    // vulkanResources.m_VkPipelineLayout = createPipelineLayout(vulkanResources.m_VkDevice);
-    // vulkanResources.m_VkPipeline = createGraphicsPipeline(vulkanResources.m_VkDevice, vulkanResources.m_VkSwapchainExtent, vulkanResources.m_VkPipelineLayout);
-
-    // setup buffers and objects
-    std::vector<Model> models = processGLTF("../models/SimplePlane.gltf");
-    std::move(models.begin(), models.end(), std::back_inserter(sceneResources.m_vModels));
-}
-
 void run(AppResources &appResources, VulkanResources &vulkanResources)
 {
+    PipelineCreator::initiailize(vulkanResources.m_VkDevice, vulkanResources.m_VkSwapchainExtent, vulkanResources.m_VkSwapchainImageFormat);
+
     SceneResources sceneResources;
-    sceneInit(vulkanResources, sceneResources);
+    sceneResources.renderer.addSortBin(SortBinType::OPAQUE, { PIPELINE_DEFAULT } );
+
+    std::vector<Model> models = processGLTF("../models/SimplePlane.gltf");
+    std::move(models.begin(), models.end(), std::back_inserter(sceneResources.m_vModels));
+    models.clear();
+    models = processGLTF("../models/Plane.gltf");
+    std::move(models.begin(), models.end(), std::back_inserter(sceneResources.m_vModels));
 
     while (!glfwWindowShouldClose(appResources.m_Window))
     {
@@ -75,10 +74,19 @@ void run(AppResources &appResources, VulkanResources &vulkanResources)
 
         frame.setColorAttachment(vulkanResources.m_VkSwapchainImages[vulkanResources.m_uSwapchainImageIdx]);
 
-        // frame.cull();
+        // Cull - everything passes rn
+        for (const Model& model : sceneResources.m_vModels)
+        {
+            for (const Renderable& renderable : model.m_pPrototype->m_Renderables)
+            {
+                sceneResources.renderer.addRenderable(SortBinType::OPAQUE, PIPELINE_DEFAULT, 0u, renderable);
+            }
+        }
 
         // Render
-        VkCommandBuffer commandBuffer = frame.render();
+        VkCommandBuffer commandBuffer = frame.render(sceneResources.renderer);
+
+        sceneResources.renderer.reset();
 
         const VkSemaphoreSubmitInfoKHR acquireCompleteSemaphoreSubmitInfo{
             .sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO_KHR,
@@ -123,22 +131,14 @@ void run(AppResources &appResources, VulkanResources &vulkanResources)
     }
 
     VK_CHECK(vkDeviceWaitIdle(vulkanResources.m_VkDevice));
-
-    for (VkPipelineLayout pipelineLayout : sceneResources.m_vVkPipelineLayouts)
-        vkDestroyPipelineLayout(vulkanResources.m_VkDevice, pipelineLayout, nullptr);
-
-    for (VkPipeline pipeline : sceneResources.m_vVkPipelines)
-        vkDestroyPipeline(vulkanResources.m_VkDevice, pipeline, nullptr);
 }
 
 void cleanup(AppResources &appResources, VulkanResources &vulkanResources)
 {
-    // vkDestroyPipelineLayout(vulkanResources.m_VkDevice, vulkanResources.m_VkPipelineLayout, nullptr);
-    // vkDestroyPipeline(vulkanResources.m_VkDevice, vulkanResources.m_VkPipeline, nullptr);
-
     for (VkFrame &frame : appResources.m_Frames)
         frame.cleanup();
 
+    PipelineBin::destroy(vulkanResources.m_VkDevice);
 
     vulkanDestroy(vulkanResources);
 

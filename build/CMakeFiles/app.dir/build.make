@@ -70,9 +70,61 @@ CMakeFiles/app.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/main.cpp -o CMakeFiles/app.dir/main.cpp.s
 
+CMakeFiles/app.dir/Renderer/SortBin.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Renderer/SortBin.cpp.o: ../Renderer/SortBin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/Renderer/SortBin.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Renderer/SortBin.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.cpp
+
+CMakeFiles/app.dir/Renderer/SortBin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/Renderer/SortBin.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.cpp > CMakeFiles/app.dir/Renderer/SortBin.cpp.i
+
+CMakeFiles/app.dir/Renderer/SortBin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/SortBin.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/SortBin.cpp -o CMakeFiles/app.dir/Renderer/SortBin.cpp.s
+
+CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o: ../Renderer/PipelineBin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.cpp
+
+CMakeFiles/app.dir/Renderer/PipelineBin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/Renderer/PipelineBin.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.cpp > CMakeFiles/app.dir/Renderer/PipelineBin.cpp.i
+
+CMakeFiles/app.dir/Renderer/PipelineBin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/PipelineBin.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineBin.cpp -o CMakeFiles/app.dir/Renderer/PipelineBin.cpp.s
+
+CMakeFiles/app.dir/Renderer/Renderable.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Renderer/Renderable.cpp.o: ../Renderer/Renderable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/Renderer/Renderable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Renderer/Renderable.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.cpp
+
+CMakeFiles/app.dir/Renderer/Renderable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/Renderer/Renderable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.cpp > CMakeFiles/app.dir/Renderer/Renderable.cpp.i
+
+CMakeFiles/app.dir/Renderer/Renderable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/Renderable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/Renderable.cpp -o CMakeFiles/app.dir/Renderer/Renderable.cpp.s
+
+CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o: ../Renderer/PipelineCreator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp
+
+CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp > CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.i
+
+CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan/Renderer/PipelineCreator.cpp -o CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.s
+
 CMakeFiles/app.dir/App.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/App.cpp.o: ../App.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/App.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/App.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/App.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/App.cpp
 
 CMakeFiles/app.dir/App.cpp.i: cmake_force
@@ -85,7 +137,7 @@ CMakeFiles/app.dir/App.cpp.s: cmake_force
 
 CMakeFiles/app.dir/VkStartup.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/VkStartup.cpp.o: ../VkStartup.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/VkStartup.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/VkStartup.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/VkStartup.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/VkStartup.cpp
 
 CMakeFiles/app.dir/VkStartup.cpp.i: cmake_force
@@ -98,7 +150,7 @@ CMakeFiles/app.dir/VkStartup.cpp.s: cmake_force
 
 CMakeFiles/app.dir/VkRuntime.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/VkRuntime.cpp.o: ../VkRuntime.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/VkRuntime.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/VkRuntime.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/VkRuntime.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/VkRuntime.cpp
 
 CMakeFiles/app.dir/VkRuntime.cpp.i: cmake_force
@@ -111,7 +163,7 @@ CMakeFiles/app.dir/VkRuntime.cpp.s: cmake_force
 
 CMakeFiles/app.dir/VkFrame.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/VkFrame.cpp.o: ../VkFrame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/VkFrame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/app.dir/VkFrame.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/VkFrame.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/VkFrame.cpp
 
 CMakeFiles/app.dir/VkFrame.cpp.i: cmake_force
@@ -124,7 +176,7 @@ CMakeFiles/app.dir/VkFrame.cpp.s: cmake_force
 
 CMakeFiles/app.dir/Loader.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/Loader.cpp.o: ../Loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/Loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/app.dir/Loader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Loader.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Loader.cpp
 
 CMakeFiles/app.dir/Loader.cpp.i: cmake_force
@@ -137,7 +189,7 @@ CMakeFiles/app.dir/Loader.cpp.s: cmake_force
 
 CMakeFiles/app.dir/Buffer.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/Buffer.cpp.o: ../Buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/Buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/app.dir/Buffer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/Buffer.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan/Buffer.cpp
 
 CMakeFiles/app.dir/Buffer.cpp.i: cmake_force
@@ -151,6 +203,10 @@ CMakeFiles/app.dir/Buffer.cpp.s: cmake_force
 # Object files for target app
 app_OBJECTS = \
 "CMakeFiles/app.dir/main.cpp.o" \
+"CMakeFiles/app.dir/Renderer/SortBin.cpp.o" \
+"CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o" \
+"CMakeFiles/app.dir/Renderer/Renderable.cpp.o" \
+"CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o" \
 "CMakeFiles/app.dir/App.cpp.o" \
 "CMakeFiles/app.dir/VkStartup.cpp.o" \
 "CMakeFiles/app.dir/VkRuntime.cpp.o" \
@@ -162,6 +218,10 @@ app_OBJECTS = \
 app_EXTERNAL_OBJECTS =
 
 app: CMakeFiles/app.dir/main.cpp.o
+app: CMakeFiles/app.dir/Renderer/SortBin.cpp.o
+app: CMakeFiles/app.dir/Renderer/PipelineBin.cpp.o
+app: CMakeFiles/app.dir/Renderer/Renderable.cpp.o
+app: CMakeFiles/app.dir/Renderer/PipelineCreator.cpp.o
 app: CMakeFiles/app.dir/App.cpp.o
 app: CMakeFiles/app.dir/VkStartup.cpp.o
 app: CMakeFiles/app.dir/VkRuntime.cpp.o
@@ -172,7 +232,7 @@ app: CMakeFiles/app.dir/build.make
 app: /home/mica/Downloads/1.3.204.1/x86_64/lib/libvulkan.so
 app: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

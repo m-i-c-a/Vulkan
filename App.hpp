@@ -8,6 +8,7 @@
 
 #include "Model.hpp"
 #include "VkFrame.hpp"
+#include "Renderer/RenderManager.hpp"
 
 class GLFWwindow;
 
@@ -20,6 +21,8 @@ struct SceneResources
     };
 
     VkPipelineLayout m_VkPipelineLayout;
+
+    RenderManager renderer;
 
     std::vector<Model> m_vModels;
     std::array<VkPipelineLayout, PIPELINE_COUNT> m_vVkPipelineLayouts;

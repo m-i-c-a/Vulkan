@@ -16,7 +16,6 @@
 #include "Loader.hpp"
 #include "Buffer.hpp"
 #include "Model.hpp"
-#include "Renderer/PipelineCreator.hpp"
 
 namespace
 {

@@ -11,7 +11,6 @@
 
 
 #include "Renderer/RenderManager.hpp"
-#include "Renderer/PipelineCreator.hpp"
 
 void appInit(AppResources &appResources, VulkanResources &vulkanResources)
 {

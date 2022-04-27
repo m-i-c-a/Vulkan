@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "PipelineBin.hpp"
-#include "PipelineCreator.hpp"
 
 PipelineManager* PipelineBin::m_pPipelineManager = nullptr;
 

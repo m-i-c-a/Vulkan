@@ -8,7 +8,6 @@
 
 #include "Types.hpp"
 #include "Renderable.hpp"
-#include "PipelineCreator.hpp"
 #include "PipelineManager.hpp"
 
 class PipelineBin
